@@ -1,0 +1,28 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+    <ul class="menu">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('submissionForm') }}"> Submit Beer Prefernces</a></li>
+    </ul>
+</div>
+{% endblock %}
+{% block title %}Beer Me Bot{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+{% block content %}
+  <h1>Data Entry Point for Beer Me Bot</h1>
+
+
+<div class="container">
+<div id="login">
+    <button class="btn btn-default btn-lg" >Join the Social Network of Beer</button>
+</div>
+
+    </div>
+{% endblock %}
+
+
+

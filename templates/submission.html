@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+    <ul class="menu">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('submissionForm') }}"> Submit Beer Prefernces</a></li>
+    </ul>
+</div>
+{% endblock %}
+{% import "helpers/forms.html" as forms %}
+{% block title %}Submit Beers to Help others find the beers to like{% endblock %}
+{% block content %}
+{{ super() }}
+<body>
+<h1> Submit a beer rating below</h1>
+<ol>
+	<li> Beer Name </li>
+	<li> Beer Class </li>
+	<li> ABV</li>
+	<li> IBU </li>
+	<li> Tasting Notes </li>
+</ol>
+</body>
+<form action="/AddABeer" method="POST">
+	<fieldset>
+	<legend>Add a new beer to your user profile</legend>
+	{{ forms.render(submit_form) }}
+		<p><input type="Submit" value="Save The Beer!"></p>
+	</fieldset>
+</form>
+
+{% endblock content %}
