@@ -8,7 +8,7 @@ from flask.ext.wtf import Form
 from wtforms import fields
 
 ### import passwords
-inFile = open('/home/sentinel/beermebot/.passwords.txt')
+inFile = open('.passwords.txt')
 creds = inFile.read()
 SECRET_KEY = re.findall('SECRET_KEY:\w+', creds)[0].strip('SECRET_KEY:')
 DB_SECRET = re.findall('DB_SECRET:\w+', creds)[0].strip('DB_SECRET:')
