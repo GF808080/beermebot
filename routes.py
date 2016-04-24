@@ -82,4 +82,4 @@ def obj_to_list(sa_obj, field_order):
     return [getattr(sa_obj, field_name, None) for field_name in field_order]
 
 if __name__ == '__main__':
-  	app.run('0.0.0.0')
+  	app.run(debug=True)
