@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% import "helpers/tables.html" as tables %}
+{% block title %}View {{type}}{% endblock %}
+{% block content %}
+<h1> Here is the Master List</h1>
+
+{{ super() }}
+<table>
+{{ tables.render(data) }}
+</table>
+{% endblock content %}
