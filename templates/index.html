@@ -1,28 +1,89 @@
-{% extends "bootstrap/base.html" %}
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-    <ul class="menu">
-        <li><a href="{{ url_for('index') }}">Home</a></li>
-        <li><a href="{{ url_for('submissionForm') }}"> Submit Beer Prefernces</a></li>
-    </ul>
-</div>
-{% endblock %}
-{% block title %}Beer Me Bot{% endblock %}
-{% block styles %}
-{{super()}}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-{% endblock %}
-{% block content %}
-  <h1>Data Entry Point for Beer Me Bot</h1>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
-<div class="container">
-<div id="login">
-    <button class="btn btn-default btn-lg" >Join the Social Network of Beer</button>
-</div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Beermebot</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        App Features
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('submissionForm') }}">Submit Beer Preferences</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('Master_List_Display') }}">Master Beer List</a>
+                </li>
+  
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Beer Me Bot</h1>
+                        <p>BeerMeBot a way to get a beer recommendation when your bartender is too busy to talk to you. You don't need six pack abs or a skimpy shirt to get the BeerMeBot's attention, just send it a message and it will be respond. Tips, though, are always appreciated!.</p>
+                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
 
     </div>
-{% endblock %}
+    <!-- /#wrapper -->
 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
